@@ -72,6 +72,14 @@ VITE_FIREBASE_MESSAGING_SENDER_ID=your-messaging-sender-id
 VITE_FIREBASE_APP_ID=your-app-id
 ```
 
+#### With Local Setup
+
+In the `.env` file. Add the following key
+
+```env
+VITE_API_URL="http://localhost:3000"
+```
+
 #### Backend Firebase Setup
 
 In the backend folder, create a `.env` file and add the Firebase admin credentials:
