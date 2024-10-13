@@ -69,7 +69,7 @@ The project provides two types of users: Writers and Editors, each with specific
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/ai-fe-exam.git
+git clone https://github.com/justkeepdoingit/ai-fe-exam.git
 ```
 
 ### 2. Install Dependencies
