@@ -6,35 +6,6 @@ This project implements a Writer/Editor Dashboard Site that allows users to crea
 
 The project provides two types of users: Writers and Editors, each with specific permissions and actions. Writers can create and edit unpublished articles, while Editors have additional privileges to publish articles and manage users and companies.
 
-## Features
-
-### Writer and Editor Dashboard:
-
-- Writers can create and edit articles.
-- Editors can manage articles, users, and companies.
-
-### Article Management:
-
-- Articles include fields such as title, content, related company, and images.
-- Editors have the ability to publish articles.
-
-### User Management:
-
-- Editors can add and update users.
-- Users include writers and editors with different access levels.
-
-### Company Management:
-
-- Editors can add and update company details.
-
-### Firebase Authentication:
-
-- Secured login system for writers and editors.
-
-### Responsive Design:
-
-- Frontend is built using Vue.js ensuring responsive and user-friendly design.
-
 ## Project Structure
 
 ```
@@ -190,8 +161,3 @@ After both frontend and backend servers are running, visit `http://localhost:517
 - Has access to two buttons in the article editor: "Save" and "Publish".
 - Can manage users and companies.
 - Dashboard shows articles ready for publication and already published articles.
-
-## Notes
-
-- Ensure to deploy both the frontend and backend to the live environment and provide the live link in the required outputs.
-- Provide access to the source code on GitHub or Bitbucket, along with this README file.
