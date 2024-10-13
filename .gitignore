@@ -26,3 +26,6 @@ blog-vue/.prettierrc.json
 blog-nest/.eslintrc.js
 blog-nest/.prettierrc
 blog-nest/nest-cli.json
+blog-vue/.firebase/hosting.ZGlzdA.cache
+# Local Netlify folder
+.netlify
