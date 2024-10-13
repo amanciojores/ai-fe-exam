@@ -3,10 +3,26 @@
 /blog-nest/.env
 /blog-nest/test
 /blog-nest/node_modules
+
 #Backend Dist
 /blog-nest/dist
 
+#fontend Dist
+blog-vue/dist
 
 blog-vue/node_modules
 blog-vue/.env
 blog-vue/.vscode
+
+#firebase
+blog-vue/firebase.json
+blog-vue/firestore.indexes.json
+blog-vue/firestore.rules
+
+#Misc
+blog-vue/.eslintrc.cjs
+blog-vue/.firebaserc
+blog-vue/.prettierrc.json
+blog-nest/.eslintrc.js
+blog-nest/.prettierrc
+blog-nest/nest-cli.json

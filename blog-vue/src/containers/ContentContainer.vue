@@ -1,15 +1,18 @@
 <template>
-  <div :class="[' max-w-fit flex', innerContent ? '' : 'mx-auto h-full', customClass]">
+  <div :class="[display == 'flex' ? 'flex' : display, innerContent ? '' : 'w-full mx-auto h-full']">
     <slot></slot>
   </div>
 </template>
 
 <script setup>
-const {innerContent, customClass} = defineProps({
+const { innerContent, display } = defineProps({
   innerContent: {
     type: Boolean,
-    default: false,
+    default: false
   },
-  customClass: String
+  display: {
+    type: String,
+    default: 'flex'
+  }
 })
 </script>

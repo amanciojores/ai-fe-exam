@@ -8,6 +8,12 @@ export default {
         1: '1px',
         2: '2px',
         3: '3px'
+      },
+      backgroundColor: {
+        'vue-green': '#42b883'
+      },
+      borderColor: {
+        'vue-green': '#42b883'
       }
     }
   },

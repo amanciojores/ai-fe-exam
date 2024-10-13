@@ -3,17 +3,17 @@ import { IsNotEmpty, IsString, IsEnum } from 'class-validator';
 export class CreateUserDto {
   @IsNotEmpty()
   @IsString()
-  firstname: string;
+  firstname?: string;
 
   @IsNotEmpty()
   @IsString()
-  lastname: string;
+  lastname?: string;
 
   @IsNotEmpty()
-  @IsEnum(['admin', 'user', 'guest'])
-  type: string;
+  @IsEnum(['writer', 'editor'])
+  type?: string;
 
   @IsNotEmpty()
   @IsEnum(['active', 'inactive'])
-  status: string;
+  status?: string;
 }

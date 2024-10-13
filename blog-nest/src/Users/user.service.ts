@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { FirebaseRepository } from 'src/FirebaseService/firebase.service';
 import { CreateUserDto } from './dto/create-user.dto';
-// import { UpdateUserDto } from './dto/update-user.dto';
+import { UpdateUserDto } from './dto/update-user.dto';
 
 @Injectable()
 export class UserService {
@@ -10,24 +10,28 @@ export class UserService {
   constructor(
     private readonly firebaseRepo: FirebaseRepository<CreateUserDto>,
   ) {
-    this.repository = firebaseRepo; // Pass the 'users' collection name during instantiation
+    this.repository = firebaseRepo;
   }
 
-  async createUser(createUserDto: CreateUserDto) {
-    return this.repository.addDocument(createUserDto);
+  async createUser(createUserDto: CreateUserDto, documentID: string) {
+    return this.repository.addDocument(createUserDto, documentID);
   }
 
   async findAllUsers() {
     return this.repository.getAllDocuments();
   }
 
-  // async findUserById(id: string) {
-  //   return this.repository.getDocumentById(id);
-  // }
+  async findUserById(id: string) {
+    return this.repository.getDocumentById(id);
+  }
 
-  // async updateUser(id: string, updateUserDto: Partial<UpdateUserDto>) {
-  //   return this.repository.updateDocument(id, updateUserDto);
-  // }
+  async loginUser(bearerToken: any) {
+    return this.repository.logInUser(bearerToken);
+  }
+
+  async updateUser(id: string, updateUserDto: Partial<UpdateUserDto>) {
+    return this.repository.updateDocument(id, updateUserDto);
+  }
 
   // async deleteUser(id: string) {
   //   return this.repository.deleteDocument(id);
