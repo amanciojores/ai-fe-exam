@@ -74,15 +74,15 @@ export class UserController {
           httpOnly: true,
           secure: true,
           maxAge: 24 * 60 * 60 * 1000,
+          sameSite: 'none',
         });
         res.cookie('__Security__', bcrypt.hash(tokenVerify.uid, 10), {
           httpOnly: true,
           secure: true,
           maxAge: 24 * 60 * 60 * 1000,
+          sameSite: 'none',
         });
         const user = await this.userService.loginUser(tokenVerify);
-        res.cookie('__userType__', user.type);
-        res.cookie('__user__', `${user.firstname}`);
         return user;
       } catch (e) {
         console.log(e);
@@ -93,12 +93,21 @@ export class UserController {
   }
 
   @Get('logout')
-  async logout(@Res({ passthrough: true }) response: Response) {
-    ['__Secure__', '__Security__', '__userType__', '__user__'].forEach(
-      (cookie) => {
-        response.clearCookie(cookie);
-      },
-    );
+  async logout(@Res({ passthrough: true }) res: Response) {
+    res.cookie('__Secure__', '', {
+      httpOnly: true,
+      secure: true,
+      maxAge: -1,
+      sameSite: 'none',
+      domain: 'ai-fe-exam-function-nest.vercel.app',
+    });
+    res.cookie('__Security__', '', {
+      httpOnly: true,
+      secure: true,
+      maxAge: -1,
+      sameSite: 'none',
+      domain: 'ai-fe-exam-function-nest.vercel.app',
+    });
     return 'Success';
   }
 

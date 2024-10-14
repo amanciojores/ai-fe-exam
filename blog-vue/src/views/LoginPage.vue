@@ -28,7 +28,7 @@ import { app } from '@/firebase'
 import { ref } from 'vue'
 import { useStore } from 'vuex'
 import { useRouter } from 'vue-router'
-
+import Cookies from 'js-cookie'
 import eventBus from '@/EventBus'
 
 const email = ref('')
@@ -48,6 +48,8 @@ const login = async () => {
     }
 
     store.dispatch('postUsers/loginUser', { config }).then((response) => {
+      Cookies.set('__userType__', response.type)
+      Cookies.set('__user__', response.firstname)
       routeUser(response.type, router)
     })
   } catch (e) {
