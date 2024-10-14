@@ -70,10 +70,15 @@ export class UserController {
       const token = authToken.split(' ')[1];
       try {
         tokenVerify = await admin.auth().verifyIdToken(token);
-        res.cookie('__Secure__', token, { httpOnly: true, secure: true });
+        res.cookie('__Secure__', token, {
+          httpOnly: true,
+          secure: true,
+          maxAge: 24 * 60 * 60 * 1000,
+        });
         res.cookie('__Security__', bcrypt.hash(tokenVerify.uid, 10), {
           httpOnly: true,
           secure: true,
+          maxAge: 24 * 60 * 60 * 1000,
         });
         const user = await this.userService.loginUser(tokenVerify);
         res.cookie('__userType__', user.type);

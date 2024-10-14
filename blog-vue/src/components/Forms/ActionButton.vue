@@ -52,8 +52,8 @@
       <div
         class="bg-white z-50 p-7 rounded-lg shadow-xl w-full max-h-[75%] overflow-x-auto py-28 max-w-screen-sm"
       >
-        <span v-if="actionActive.user.status">
-          <AddUser @on-success="onSuccess" :type="actionActive.user.type" />
+        <span v-if="actionActive.addUser.status">
+          <AddUser @on-success="onSuccess" :type="actionActive.addUser.type" />
         </span>
         <span v-if="actionActive.company.status">
           <AddCompany @on-success="onSuccess" :type="actionActive.company.type" />
