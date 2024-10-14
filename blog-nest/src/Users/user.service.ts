@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { FirebaseRepository } from 'src/FirebaseService/firebase.service';
+import { FirebaseRepository } from '../FirebaseService/firebase.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 

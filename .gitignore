@@ -2,8 +2,7 @@
 #Backend
 /blog-nest/.env
 /blog-nest/test
-/blog-nest/node_modules
-
+blog-nest/node_modules
 #Backend Dist
 /blog-nest/dist
 
